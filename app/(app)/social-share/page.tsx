@@ -76,6 +76,7 @@ function SocialShare() {
 
   const handleDownload = () => {
     if (!imageRef.current) return;
+
     fetch(imageRef.current.src)
       .then((response) => response.blob())
       .then((blob) => {
@@ -89,7 +90,7 @@ function SocialShare() {
         link.click();
         document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
-        document.body.removeChild(link);
+        // document.body.removeChild(link);
       });
   };
 
